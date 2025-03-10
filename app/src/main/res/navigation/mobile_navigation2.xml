@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@id/venueplan">
+
+    <fragment
+        android:id="@+id/venueplan"
+        android:name="com.example.plannova.fragments.venuePlanFragment"
+        android:label="fragment_venue_plan"
+        tools:layout="@layout/fragment_venue_plan" />
+
+    <fragment
+        android:id="@+id/venueprofile"
+        android:name="com.example.plannova.fragments.venueProfileFragment"
+        android:label="fragment_venue_profile"
+        tools:layout="@layout/fragment_venue_profile" />
+</navigation>

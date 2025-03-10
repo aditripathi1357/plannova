@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "432994741722",
+    "project_id": "instagramclonetripathi",
+    "storage_bucket": "instagramclonetripathi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432994741722:android:87bed835f05ae1a01524e3",
+        "android_client_info": {
+          "package_name": "com.example.instagramclonetripathi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsg85TVsMBA2vjEQ2e5mLDk3-u7c94zUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432994741722:android:c01dbf45c2425f4b1524e3",
+        "android_client_info": {
+          "package_name": "com.example.plannova"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsg85TVsMBA2vjEQ2e5mLDk3-u7c94zUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

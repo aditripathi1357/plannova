@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#5360FD</color>
+    <color name="nav_item_color">#BFBFBF</color> <!-- Unselected color -->
+    <color name="nav_item_selected_color">#FFFFFF</color> <!-- Selected text/icon color -->
+    <color name="gray">#808080</color>
+    <color name="lightpink">#FFB6C1</color>
 </resources>
+
+
+

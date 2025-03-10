@@ -1,0 +1,297 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".fragments.Home2Fragment">
+
+    <!-- Existing Company Name and Location Section -->
+
+    <TextView
+        android:id="@+id/companyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plannova"
+        android:textColor="#A727B0"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/locationIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/companyName" />
+
+    <TextView
+        android:id="@+id/locationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#A727B0"
+        app:layout_constraintStart_toEndOf="@id/locationIcon"
+        app:layout_constraintTop_toTopOf="@id/locationIcon"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unknown,Unknown"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/locationLabel"
+        app:layout_constraintTop_toBottomOf="@id/locationLabel"
+        android:layout_marginTop="2dp" />
+
+    <ImageView
+        android:id="@+id/downArrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/down"
+        app:layout_constraintStart_toEndOf="@id/locationText"
+        app:layout_constraintBottom_toBottomOf="@id/locationText"
+        android:layout_marginStart="8dp" />
+
+    <ImageView
+        android:id="@+id/notificationIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/locationIcon" />
+
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/search_background"
+        android:drawableStart="@drawable/lens"
+        android:hint="Search Events, Organizer"
+        android:paddingStart="16dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/locationText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Categories Section -->
+    <TextView
+        android:id="@+id/categoriesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categories"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#A727B0"
+        app:layout_constraintTop_toBottomOf="@id/searchBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/categoriesScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/categoriesLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Venue Category -->
+            <LinearLayout
+                android:id="@+id/venueCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/venue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Venue"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#A727B0"/>
+            </LinearLayout>
+
+            <!-- Catering Category -->
+            <LinearLayout
+                android:id="@+id/cateringCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:layout_constraintStart_toEndOf="@id/venueCategory"
+                android:layout_marginStart="12dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/catering" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Catering"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#A727B0"/>
+            </LinearLayout>
+
+            <!-- Photo Category -->
+            <LinearLayout
+                android:id="@+id/photoCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:layout_constraintStart_toEndOf="@id/cateringCategory"
+                android:layout_marginStart="12dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/cinema" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Photo"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#A727B0"/>
+            </LinearLayout>
+
+            <!-- Party Category -->
+            <LinearLayout
+                android:id="@+id/partyCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:layout_constraintStart_toEndOf="@id/photoCategory"
+                android:layout_marginStart="12dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/dj" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Party"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#A727B0"/>
+            </LinearLayout>
+
+            <!-- Staff Services Category -->
+            <LinearLayout
+                android:id="@+id/staffCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp"
+                app:layout_constraintStart_toEndOf="@id/partyCategory"
+                android:layout_marginStart="12dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/roomservice" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Staff"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#A727B0"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Upcoming Events Section -->
+    <TextView
+        android:id="@+id/upcomingEventsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upcoming Events"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#A727B0"
+        app:layout_constraintTop_toBottomOf="@id/categoriesScrollView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/upcomingEventsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/upcomingEventsLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        tools:listitem="@layout/item_event_card" />
+
+    <!-- Nearby Events Section -->
+    <TextView
+        android:id="@+id/nearbyEventsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nearby Events"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#A727B0"
+        app:layout_constraintTop_toBottomOf="@id/upcomingEventsRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nearbyEventsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/nearbyEventsLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        tools:listitem="@layout/item_event_card" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
