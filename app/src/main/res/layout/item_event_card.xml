@@ -3,65 +3,98 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="2dp">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp">
+        android:layout_height="wrap_content">
 
         <!-- Event Image -->
         <ImageView
             android:id="@+id/eventImage"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"/>
-            //android:src="@drawable/event_placeholder" />
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/event_placeholder" />
 
-        <!-- Event Name -->
-        <TextView
-            android:id="@+id/eventName"
-            android:layout_width="wrap_content"
+        <!-- Content Container -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Event Name"
-            android:textSize="14sp"
-            android:textStyle="bold"
             android:layout_below="@id/eventImage"
-            android:layout_marginTop="4dp"
-            android:paddingStart="4dp" />
+            android:orientation="vertical"
+            android:padding="12dp">
 
-        <!-- Event Date and Time -->
-        <TextView
-            android:id="@+id/eventDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date"
-            android:textSize="12sp"
-            android:layout_below="@id/eventName"
-            android:paddingStart="4dp" />
+            <!-- Event Name and Like Container -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <!-- Event Location -->
-        <TextView
-            android:id="@+id/eventLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:textSize="12sp"
-            android:layout_below="@id/eventDate"
-            android:paddingStart="4dp" />
+                <!-- Event Name -->
+                <TextView
+                    android:id="@+id/eventName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Event Name"
+                    android:textSize="16sp"
+                    android:textColor="#212121"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@id/imageView3"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
 
-        <!-- Event Price -->
-        <TextView
-            android:id="@+id/eventPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price"
-            android:textSize="12sp"
-            android:layout_below="@id/eventLocation"
-            android:paddingStart="4dp"
-            android:layout_marginBottom="4dp" />
+                <!-- Like Image -->
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="2dp"
+                    app:srcCompat="@drawable/like"
+                    app:tint="#FF5252" />
+            </RelativeLayout>
 
+            <!-- Event Date -->
+            <TextView
+                android:id="@+id/eventDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Date"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:drawableStart="@drawable/calendar"
+                android:drawablePadding="6dp" />
+
+            <!-- Event Location -->
+            <TextView
+                android:id="@+id/eventLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Location"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:drawableStart="@drawable/locationcard"
+                android:drawablePadding="6dp" />
+
+            <!-- Event Price -->
+            <TextView
+                android:id="@+id/eventPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Price"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#B015B6"
+                android:drawableStart="@drawable/price"
+                android:drawablePadding="6dp" />
+
+        </LinearLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

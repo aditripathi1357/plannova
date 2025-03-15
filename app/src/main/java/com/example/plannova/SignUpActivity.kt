@@ -8,7 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.plannova.Models.User
+import com.example.plannova.Models.Users
 import com.example.plannova.databinding.ActivitySignUpBinding
 import com.example.plannova.utils.USER_NODE
 import com.example.plannova.utils.USER_PROFILE_FOLDER
@@ -25,7 +25,7 @@ import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
     private val binding by lazy { ActivitySignUpBinding.inflate(layoutInflater) }
-    private lateinit var user: User
+    private lateinit var user: Users
     private var selectedRole: String? = null // Role must be selected
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
@@ -56,7 +56,7 @@ class SignUpActivity : AppCompatActivity() {
 
                     auth.signInWithCredential(credential)
                         .addOnSuccessListener {
-                            user = User(
+                            user = Users(
                                 name = account?.displayName ?: "",
                                 email = account?.email ?: "",
                                 mobile = "",  // No phone number from Google
@@ -82,11 +82,15 @@ class SignUpActivity : AppCompatActivity() {
 
         // Google Sign-In Button Click
         binding.google.setOnClickListener {
-            val signInIntent = googleSignInClient.signInIntent
-            googleSignInLauncher.launch(signInIntent) // ✅ Fixed incorrect call
+            googleSignInClient.signOut().addOnCompleteListener {
+                googleSignInClient.revokeAccess().addOnCompleteListener {
+                    val signInIntent = googleSignInClient.signInIntent
+                    googleSignInLauncher.launch(signInIntent)  // ✅ Force re-authentication
+                }
+            }
         }
 
-        user = User()
+        user = Users()
 
         // Profile Image Upload
         val imagePickerLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
@@ -168,7 +172,7 @@ class SignUpActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { result ->
                 if (result.isSuccessful) {
-                    user = User(
+                    user = Users(
                         name = name,
                         email = email,
                         mobile = mobile,

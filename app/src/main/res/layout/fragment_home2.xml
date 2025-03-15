@@ -110,7 +110,7 @@
         android:scrollbars="none">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <!-- Venue Category -->
@@ -121,7 +121,8 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:layout_width="48dp"
@@ -129,6 +130,7 @@
                     android:src="@drawable/venue" />
 
                 <TextView
+                    android:id="@+id/venuetovenuefragment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -147,6 +149,7 @@
                 android:orientation="vertical"
                 android:padding="8dp"
                 app:layout_constraintStart_toEndOf="@id/venueCategory"
+                app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="12dp">
 
                 <ImageView
@@ -173,6 +176,7 @@
                 android:orientation="vertical"
                 android:padding="8dp"
                 app:layout_constraintStart_toEndOf="@id/cateringCategory"
+                app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="12dp">
 
                 <ImageView
@@ -199,6 +203,7 @@
                 android:orientation="vertical"
                 android:padding="8dp"
                 app:layout_constraintStart_toEndOf="@id/photoCategory"
+                app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="12dp">
 
                 <ImageView
@@ -225,6 +230,7 @@
                 android:orientation="vertical"
                 android:padding="8dp"
                 app:layout_constraintStart_toEndOf="@id/partyCategory"
+                app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="12dp">
 
                 <ImageView
@@ -241,15 +247,18 @@
                     android:textStyle="bold"
                     android:textColor="#A727B0"/>
             </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.core.widget.NestedScrollView>
+
 
     <!-- Upcoming Events Section -->
     <TextView
         android:id="@+id/upcomingEventsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upcoming Events"
+        android:text="Favrouite Events"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#A727B0"
@@ -270,12 +279,12 @@
         android:layout_marginTop="8dp"
         tools:listitem="@layout/item_event_card" />
 
-    <!-- Nearby Events Section -->
+
     <TextView
         android:id="@+id/nearbyEventsLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nearby Events"
+        android:text="Most Search Events"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#A727B0"
@@ -293,5 +302,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"
         tools:listitem="@layout/item_event_card" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

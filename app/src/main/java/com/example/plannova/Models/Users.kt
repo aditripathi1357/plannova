@@ -1,6 +1,6 @@
 package com.example.plannova.Models
 
-class User {
+class Users {
     var image: String? = null
     var name: String? = null
     var email: String? = null

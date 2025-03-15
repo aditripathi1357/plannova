@@ -5,14 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.plannova.R
 import com.example.plannova.adapters.ViewPagerAdapter
-import com.example.plannova.databinding.FragmentBudgetBinding
-import com.example.plannova.databinding.FragmentUserInfoBinding
+
+import com.example.plannova.databinding.FragmentDiscoverBinding
 
 
-class BudgetFragment : Fragment() {
-    private lateinit var binding: FragmentBudgetBinding
+class discoverFragment : Fragment() {
+    private lateinit var binding: FragmentDiscoverBinding
     private lateinit var viewPagerAdapter: ViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +26,7 @@ class BudgetFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View{
         // Inflate the layout for this fragment
-        binding = FragmentBudgetBinding.inflate(inflater, container, false)
+        binding = FragmentDiscoverBinding.inflate(inflater, container, false)
 
         viewPagerAdapter=ViewPagerAdapter(requireActivity().supportFragmentManager)
         viewPagerAdapter.addFragments(VenueFragment(),"Venue")

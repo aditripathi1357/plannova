@@ -2,18 +2,13 @@ package com.example.plannova.fragments
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import com.example.plannova.Models.User
-import com.example.plannova.R
+import com.example.plannova.Models.Users
 import com.example.plannova.databinding.FragmentUserInfoBinding
 import com.example.plannova.utils.USER_NODE
 import com.google.firebase.auth.ktx.auth
@@ -148,7 +143,7 @@ class UserInfoFragment : Fragment() {
 
         Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid).get()
             .addOnSuccessListener {
-                val user: User = it.toObject<User>()!!
+                val user: Users = it.toObject<Users>()!!
                 binding.nameprofile.text = user.name
                 binding.fullname.text = user.name
                 binding.email.text = user.email

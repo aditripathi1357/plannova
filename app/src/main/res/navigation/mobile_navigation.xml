@@ -8,15 +8,24 @@
         android:id="@+id/home2"
         android:name="com.example.plannova.fragments.Home2Fragment"
         android:label="fragment_home2"
-        tools:layout="@layout/fragment_home2" />
+        tools:layout="@layout/fragment_home2" >
+        <action
+            android:id="@+id/action_home2_to_venueHistoryFragment"
+            app:destination="@id/venueHistoryFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/budget"
-        android:name="com.example.plannova.fragments.BudgetFragment"
+        android:id="@+id/discover"
+        android:name="com.example.plannova.fragments.discoverFragment"
         android:label="fragment_budget"
-        tools:layout="@layout/fragment_budget" />
+        tools:layout="@layout/fragment_discover" />
     <fragment
         android:id="@+id/user_info"
         android:name="com.example.plannova.fragments.UserInfoFragment"
         android:label="fragment_user_info"
         tools:layout="@layout/fragment_user_info" />
+    <fragment
+        android:id="@+id/venueHistoryFragment"
+        android:name="com.example.plannova.fragments.venueHistoryFragment"
+        android:label="fragment_venue_history"
+        tools:layout="@layout/fragment_venue_history" />
 </navigation>
